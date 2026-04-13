@@ -16,16 +16,14 @@
 - SAFe's concepts of enablers, architectural runway, NFRs, and acceptance criteria are useful checks against fake vertical slicing.
 - C4 supplies a better architecture abstraction hierarchy than dumping architecture into stories. The skillset uses C4 views as decision artifacts tied to value stream, capability, feature, and story levels.
 
-## Local Skills Reviewed For Incorporation
+## Workflow Capabilities Reviewed For Incorporation
 
-- `superpowers:brainstorming`
-- `superpowers:writing-plans`
-- `superpowers:subagent-driven-development`
-- `superpowers:executing-plans`
-- `superpowers:test-driven-development`
-- `superpowers:verification-before-completion`
-- `skill-creator`
-- `writing-skills`
+- Brainstorming and design discovery
+- Implementation planning
+- Parallel task execution and plan execution
+- Test-driven development
+- Verification-before-completion
+- Skill authoring guidance
 
 ## Design Hypothesis
 
@@ -36,4 +34,3 @@ The value of this skillset is not SAFe compliance. The value is preserving conte
 3. Each artifact has an exit gate.
 4. Architecture decisions stay visible through C4 views.
 5. Implementation starts only after the active story packet is small enough for human review and concrete enough for planning.
-

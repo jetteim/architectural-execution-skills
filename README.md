@@ -1,12 +1,12 @@
 # Architectural Execution Skills
 
-This repository contains a Codex skillset for turning broad product and architecture intent into implementation-ready work without falling into specification-driven development cliches.
+This repository contains an agent-agnostic skillset for turning broad product and architecture intent into implementation-ready work without falling into specification-driven development cliches.
 
 The working model is an abstraction ladder:
 
 `value stream -> capability -> feature -> C4 architecture view -> story packet -> implementation plan -> TDD execution -> verification`
 
-It borrows useful vocabulary from SAFe and useful zoom levels from C4, but it is not a SAFe implementation kit. The goal is a lightweight architecture/execution pipeline that keeps context human-sized and hands off to existing Superpowers skills instead of reinventing them.
+It borrows useful vocabulary from SAFe and useful zoom levels from C4, but it is not a SAFe implementation kit. The goal is a lightweight architecture/execution pipeline that keeps context human-sized and hands off to existing planning, execution, TDD, and verification workflows instead of reinventing them.
 
 ## Skills
 
@@ -18,15 +18,15 @@ It borrows useful vocabulary from SAFe and useful zoom levels from C4, but it is
 - `slicing-stories` creates 7-10 story implementation packets and hands off to planning.
 - `reviewing-traceability` checks vertical coherence before coding.
 
-## Existing Skills To Incorporate
+## Complementary Workflow Capabilities
 
-These skills are intentionally dependencies, not duplicated here:
+These capabilities are intentionally dependencies, not duplicated here. Use the equivalent skill or workflow available in your agent runtime:
 
-- `superpowers:brainstorming` for ambiguity and design conversations at each abstraction level.
-- `superpowers:writing-plans` for executable implementation plans.
-- `superpowers:subagent-driven-development` or `superpowers:executing-plans` for plan execution.
-- `superpowers:test-driven-development` for implementation discipline.
-- `superpowers:verification-before-completion` for evidence before completion claims.
+- Brainstorming or design discovery for ambiguity and design conversations at each abstraction level.
+- Implementation planning for executable plans.
+- Plan execution or parallel task execution for carrying plans through code changes.
+- Test-driven development for implementation discipline.
+- Verification-before-completion for evidence before completion claims.
 
 ## Design Decisions
 
@@ -51,8 +51,7 @@ SAFe and Scaled Agile Framework are registered trademarks of Scaled Agile, Inc. 
 Start with:
 
 ```text
-Use $orchestrating-architecture-execution to turn this initiative into a staged artifact pipeline.
+Use the orchestrating-architecture-execution skill to turn this initiative into a staged artifact pipeline.
 ```
 
 Then let the orchestrator route to the appropriate level-specific skill.
-
