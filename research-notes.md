@@ -18,12 +18,12 @@
 
 ## Workflow Capabilities Reviewed For Incorporation
 
-- Brainstorming and design discovery
-- Implementation planning
-- Parallel task execution and plan execution
-- Test-driven development
-- Verification-before-completion
-- Skill authoring guidance
+- `superpowers:brainstorming`; otherwise equivalent design discovery
+- `superpowers:writing-plans`; otherwise equivalent implementation planning
+- `superpowers:subagent-driven-development` and `superpowers:executing-plans`; otherwise equivalent parallel or sequential plan execution
+- `superpowers:test-driven-development`; otherwise equivalent test-first implementation discipline
+- `superpowers:verification-before-completion`; otherwise equivalent evidence-before-claims verification
+- `skill-creator` and `writing-skills`; otherwise equivalent skill authoring guidance
 
 ## Design Hypothesis
 

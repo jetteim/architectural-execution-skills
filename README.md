@@ -6,9 +6,11 @@ The working model is an abstraction ladder:
 
 `value stream -> capability -> feature -> C4 architecture view -> story packet -> implementation plan -> TDD execution -> verification`
 
-It borrows useful vocabulary from SAFe and useful zoom levels from C4, but it is not a SAFe implementation kit. The goal is a lightweight architecture/execution pipeline that keeps context human-sized and hands off to existing planning, execution, TDD, and verification workflows instead of reinventing them.
+It borrows useful vocabulary from SAFe and useful zoom levels from C4, but it is not a SAFe implementation kit. The goal is a lightweight architecture/execution pipeline that keeps context human-sized and hands off to installed planning, execution, TDD, and verification skills instead of reinventing them.
 
 ## Skills
+
+Use these named skills when they are installed. If one is not available in your agent runtime, use the equivalent workflow described by the skill's artifact and exit gate.
 
 - `orchestrating-architecture-execution` routes work through the pipeline.
 - `discovering-value-streams` frames customer outcomes, triggers, flow, measures, and candidate capabilities.
@@ -20,13 +22,13 @@ It borrows useful vocabulary from SAFe and useful zoom levels from C4, but it is
 
 ## Complementary Workflow Capabilities
 
-These capabilities are intentionally dependencies, not duplicated here. Use the equivalent skill or workflow available in your agent runtime:
+These capabilities are intentionally dependencies, not duplicated here. Use the named skill when it is installed; otherwise use the equivalent workflow available in your agent runtime:
 
-- Brainstorming or design discovery for ambiguity and design conversations at each abstraction level.
-- Implementation planning for executable plans.
-- Plan execution or parallel task execution for carrying plans through code changes.
-- Test-driven development for implementation discipline.
-- Verification-before-completion for evidence before completion claims.
+- `superpowers:brainstorming`; otherwise design discovery for ambiguity and design conversations at each abstraction level.
+- `superpowers:writing-plans`; otherwise implementation planning for executable plans.
+- `superpowers:subagent-driven-development` or `superpowers:executing-plans`; otherwise plan execution or parallel task execution for carrying plans through code changes.
+- `superpowers:test-driven-development`; otherwise test-driven development for implementation discipline.
+- `superpowers:verification-before-completion`; otherwise evidence-before-completion for completion claims.
 
 ## Design Decisions
 
@@ -51,7 +53,7 @@ SAFe and Scaled Agile Framework are registered trademarks of Scaled Agile, Inc. 
 Start with:
 
 ```text
-Use the orchestrating-architecture-execution skill to turn this initiative into a staged artifact pipeline.
+Use the orchestrating-architecture-execution skill when installed to turn this initiative into a staged artifact pipeline. If it is not installed, use an equivalent architecture-to-execution workflow.
 ```
 
 Then let the orchestrator route to the appropriate level-specific skill.
