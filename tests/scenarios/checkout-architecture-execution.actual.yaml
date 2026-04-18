@@ -1,0 +1,95 @@
+artifacts:
+  ValueStreamBrief:
+    customer: shopper
+    beneficiary: checkout operations and product team
+    trigger: cart submitted
+    outcome: paid order completed
+    why_now: failed checkout incidents are recurring and release confidence is low
+    flow:
+      - cart submitted
+      - cart validated
+      - inventory reserved
+      - payment authorized
+      - order created
+      - confirmation returned
+    friction:
+      - payment-provider failures
+      - inventory timeouts
+      - unclear ownership
+      - incident learning not reaching implementation work
+    measures:
+      outcome: checkout success ratio
+      flow: cart-to-order lead time
+      guardrail: payment data protection
+
+  CapabilityMap:
+    active_capabilities:
+      - resilient payment authorization
+      - inventory timeout recovery
+      - release readiness feedback
+    capability_count: 3
+    parked_capabilities:
+      - advanced fraud routing
+      - long-term checkout personalization
+    architecture_questions:
+      - Which container owns dependency fallback behavior?
+      - How do dependency failures propagate through checkout?
+      - Which release signal gates risky checkout deploys?
+
+  FeaturePackets:
+    next_features:
+      - payment failure recovery path
+      - inventory timeout fallback
+      - checkout release readiness gate
+    architecture_impact:
+      - container
+      - dynamic
+      - deployment
+    acceptance_focus:
+      - users avoid duplicate charges on payment failure
+      - cart state is preserved when inventory times out
+      - risky checkout deploys show evidence before release
+
+  C4DecisionViews:
+    views:
+      - checkout context ownership view
+      - checkout container dependency view
+      - payment failure dynamic view
+    decision_supported: isolate failure handling and ownership before story slicing
+    avoid_architecture_theater: true
+    downstream_impact:
+      - story tests must cover dependency failures
+      - release gate must consume observability evidence
+
+  StoryPacket:
+    active_story_count: 6
+    max_allowed: 10
+    stories:
+      - payment provider decline shows retry-safe checkout result
+      - payment timeout records idempotency-safe pending state
+      - inventory timeout preserves cart state
+      - release gate reads checkout success and dependency health
+      - dependency contract tests cover failure payloads
+      - operational verification records rollback command and evidence path
+    test_hooks:
+      - contract
+      - integration
+      - e2e
+      - operational
+
+  TraceabilityReview:
+    no_orphan_stories: true
+    nfrs_have_verification_hooks: true
+    architecture_decisions_trace_to_stories: true
+    blockers: []
+    accepted_deferrals:
+      - advanced fraud routing is outside the first checkout reliability packet
+
+  ImplementationHandoff:
+    handoff_to: superpowers:writing-plans
+    stop_before_coding: true
+    parent_chain: checkout value stream -> resilient checkout capabilities -> payment and inventory recovery features
+    verification_evidence:
+      command: ./scripts/run-exercise.sh
+      output_path: tests/scenarios/checkout-architecture-execution.actual.yaml
+      rollback_path: revert this repository commit and reinstall the previous skill copy

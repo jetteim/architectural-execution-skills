@@ -1,0 +1,58 @@
+source_prompt: tests/scenarios/checkout-architecture-execution.prompt.md
+expected_artifacts:
+  - ValueStreamBrief
+  - CapabilityMap
+  - FeaturePackets
+  - C4DecisionViews
+  - StoryPacket
+  - TraceabilityReview
+  - ImplementationHandoff
+required_contents:
+  ValueStreamBrief:
+    customer: shopper
+    trigger: cart submitted
+    outcome: paid order completed
+    measures:
+      outcome: checkout success ratio
+      flow: cart-to-order lead time
+      guardrail: payment data protection
+  CapabilityMap:
+    active_capabilities:
+      - resilient payment authorization
+      - inventory timeout recovery
+      - release readiness feedback
+    capability_count: 3
+  FeaturePackets:
+    next_features:
+      - payment failure recovery path
+      - inventory timeout fallback
+      - checkout release readiness gate
+    architecture_impact:
+      - container
+      - dynamic
+      - deployment
+  C4DecisionViews:
+    views:
+      - checkout context ownership view
+      - checkout container dependency view
+      - payment failure dynamic view
+    decision_supported: isolate failure handling and ownership before story slicing
+  StoryPacket:
+    active_story_count: 6
+    max_allowed: 10
+    test_hooks:
+      - contract
+      - integration
+      - e2e
+      - operational
+  TraceabilityReview:
+    no_orphan_stories: true
+    nfrs_have_verification_hooks: true
+    architecture_decisions_trace_to_stories: true
+  ImplementationHandoff:
+    handoff_to: superpowers:writing-plans
+    stop_before_coding: true
+    verification_evidence:
+      command: ./scripts/run-exercise.sh
+      output_path: tests/scenarios/checkout-architecture-execution.actual.yaml
+      rollback_path: revert this repository commit and reinstall the previous skill copy
