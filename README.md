@@ -17,7 +17,7 @@ Use these named skills when they are installed. If one is not available in your 
 - `shaping-capabilities` turns value-stream friction into capability increments and feature candidates.
 - `shaping-features` turns capabilities into bounded feature packets with acceptance criteria, NFRs, dependencies, and architecture impact.
 - `modeling-c4-architecture` creates decision-oriented C4 views for scope, ownership, integration, deployment, and implementation planning.
-- `slicing-stories` creates 7-10 story implementation packets and hands off to planning.
+- `slicing-stories` creates bounded, testable story packets and hands off to planning when useful.
 - `reviewing-traceability` checks vertical coherence before coding.
 
 ## Complementary Workflow Capabilities
@@ -34,7 +34,7 @@ These capabilities are intentionally dependencies, not duplicated here. Use the 
 
 - SAFe is used as a vocabulary for value stream, capability, feature, story, enabler, NFR, and flow concepts. The skillset avoids SAFe roles, events, certification content, and proprietary diagrams.
 - C4 is used as an architecture zoom model. Diagrams are required only when they answer a delivery decision.
-- Story packets are capped at 7-10 active stories to preserve human context.
+- Story counts are working-size heuristics. Preserve supplied backlogs and choose a bounded active slice; one complete story can be sufficient.
 - Enabler work is allowed only when tied to a user story, NFR, architectural runway, compliance, or delivery-risk reduction.
 - Every level has an artifact contract and an exit gate before moving downward.
 
@@ -57,3 +57,11 @@ Use the orchestrating-architecture-execution skill when installed to turn this i
 ```
 
 Then let the orchestrator route to the appropriate level-specific skill.
+
+## Skill evaluation
+
+See [skill-evaluation.md](docs/skill-evaluation.md) for static fixture limits, synthetic scenarios and the opt-in fresh-run adapter. Offline runner tests are simulations; model-backed results are reported separately.
+
+## Lifecycle review
+
+Implementation/story tracking is a **partial sunset candidate** where the user chooses an equivalent curated workflow. Value streams, capability shaping and C4 remain unique retained scope. See the [coverage and migration proposal](docs/curated-migration-proposal.md); no archive or removal has been performed.
